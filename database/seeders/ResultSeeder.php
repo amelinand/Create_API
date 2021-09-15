@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ResultSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class ResultSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $path = base_path("database/data/results.sql");
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
     }
 }

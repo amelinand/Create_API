@@ -14,7 +14,7 @@ class CircuitSeeder extends Seeder
      */
     public function run()
     {
-        $path = base_path("database/data/drivers.sql");
+        $path = base_path("database/data/circuits.sql");
         $sql = file_get_contents($path);
         DB::unprepared($sql);
     }

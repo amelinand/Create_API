@@ -14,7 +14,11 @@ class CreateConstructorsTable extends Migration
     public function up()
     {
         Schema::create('constructors', function (Blueprint $table) {
-            $table->id();
+            $table->id('constructorId');
+            $table->string('constructorRef');
+            $table->string('name')->unique();
+            $table->string('nationality')->nullable();
+            $table->string('url');
             $table->timestamps();
         });
     }

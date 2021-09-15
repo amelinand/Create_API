@@ -14,8 +14,16 @@ class CreateRacesTable extends Migration
     public function up()
     {
         Schema::create('races', function (Blueprint $table) {
-            $table->id();
+            $table->id('raceId');
+            $table->integer('year')->default(0);
+            $table->integer('round')->default(0);
+            $table->foreignId('circuitId')->constrained('circuits')->default(0);
+            $table->string('name');
+            $table->date('date')->default("0000-00-00");
+            $table->time('time')->nullable();
+            $table->string('url')->unique()->nullable();
             $table->timestamps();
+
         });
     }
 

@@ -14,7 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            DriverSeeder::class
+            DriverSeeder::class,
+            RaceSeeder::class,
+            CircuitSeeder::class,
+            ConstructorSeeder::class,
+            ResultSeeder::class,
         ]);
     }
 }

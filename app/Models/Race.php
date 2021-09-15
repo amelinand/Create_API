@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Race extends Model
 {
     use HasFactory;
+    protected $primaryKey ='raceId';
+
+    protected $hidden = ["created_at", "updated_at"];
+
+    public function circuit(){
+        return $this->belongsTo(Circuit::class);
+    }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }
